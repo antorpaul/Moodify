@@ -55,6 +55,8 @@ EMBEDDING_DIM = 50
 # Read in song information
 dataFrame = pd.read_csv('data_moodsUPDATED.csv',
                         header=0, engine='python')
+
+print("Column names:")
 print(dataFrame.columns.tolist())
 
 x = dataFrame['lyrics']  # Lyrics
@@ -148,7 +150,7 @@ print(y_data.shape)
     # With GloVe 50 D, embedding layer converts in the following way:
     # input (None, 20) => (Embedding Layer) => (None, 20, 50)
 
-
+# Comment
 # Building Model
 model = keras.models.Sequential()
 model.add(embedding_layer)
