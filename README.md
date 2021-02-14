@@ -1,6 +1,8 @@
 ## Files
-* rnn_demo_medium.py - walking through a medium article detailing tensorflow/keras + LSTMs to classify tweets with an array of different emotions
 * song_sentiment_analysis_rnn.py - sentiment analsysis model using the data from data_moodsUPDATED.csv to train. Includes word embedding layers and LSTMs and a model using tensorflow's keras.
+    * A lot needs to be changed to work better for our song analysis. The current code as of (8/13) reflects more the basic system for tweets which was about a 32% accuracy. I'm hoping that without the nuances of Tweets/twitter culture, it will be easier to go through lyrics. Modern songs will however be tougher so I'll look to see if there are some newer word embeddings with slang and stuff along that lines.
+* venv - virtual environment that I've been running the code on
+
 
 ## Issues
 * Current accuracy seems fairly low
