@@ -7,7 +7,6 @@ import numpy as np
 # This is just a slightly more organized version of the imports from the medium article
 import sys
 import os
-import emoji
 
 # Math stuff
 import matplotlib.pyplot as plt
