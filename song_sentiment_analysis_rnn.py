@@ -7,12 +7,12 @@ import numpy as np
 # This is just a slightly more organized version of the imports from the medium article
 import sys
 import os
-import emoji
 
 # Math stuff
 import matplotlib.pyplot as plt
 from matplotlib import pyplot
 import pandas as pd
+import math
 
 # Sklearn
 import sklearn
@@ -54,15 +54,13 @@ EMBEDDING_DIM = 50
 
 # Read in song information
 dataFrame = pd.read_csv('data_moodsUPDATED.csv',
-                        header=0, engine='python')
+                        header=0, engine='python').dropna()
 
 print("Column names:")
 print(dataFrame.columns.tolist())
 
 x = dataFrame['lyrics']  # Lyrics
 y = dataFrame['mood']  # Mood
-
-print(x[1:10], y[1:10])
 
 
 # Preprocessing Text Data
@@ -178,18 +176,18 @@ x_train2, y_train2 = x_train[batch_size:], y_train[batch_size:]
 st=datetime.datetime.fromtimestamp(time.time()).strftime('%Y-%m-%d %H:%M:%S')
 # Define the checkpoint
     # As accuracy got better, save into memory that checkpoint
-filepath="model_weights-improvement-{epoch:02d}-{val_acc:.6f}.hdf5"
-checkpoint = keras.callbacks.ModelCheckpoint(filepath, monitor='val_acc', verbose=1, save_best_only=True, mode='max')
+filepath = "model_weights-improvement-{epoch:02d}-{val_accuracy:.6f}.hdf5"
+checkpoint = keras.callbacks.ModelCheckpoint(filepath, monitor='val_accuracy', verbose=1, save_best_only=True, mode='max')
 callbacks_list = [checkpoint]
 
-history=model.fit(x_train2, y_train2, validation_data=(x_valid, y_valid), batch_size=batch_size, epochs=num_epochs)
-# history=model.fit(x_train2, y_train2, validation_data=(x_valid, y_valid), batch_size=batch_size, epochs=num_epochs, callbacks=callbacks_list)
+# Training the Model
+# history = model.fit(x_train2, y_train2, validation_data=(x_valid, y_valid), batch_size=batch_size, epochs=num_epochs)
 
-scores = model.evaluate(x_test, y_test, verbose=0)
-print('Test accuracy:', scores[1])
+# scores = model.evaluate(x_test, y_test, verbose=0)
+# print('Test accuracy:', scores[1])
 
-pyplot.plot(history.history['acc'],label='Training Accuracy')
-# pyplot.plot(history.history['val_acc'],label='Validation Accuracy')
+# pyplot.plot(history.history['accuracy'],label='Training Accuracy')
+# pyplot.plot(history.history['val_accuracy'],label='Validation Accuracy')
 
-pyplot.legend()
-pyplot.show()
+# pyplot.legend()
+# pyplot.show()
