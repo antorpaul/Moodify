@@ -20,5 +20,7 @@ Feb 23, 2021:
 #### Yechu
    * Take a look at the rnn
 #### Antor
-   * Take a look at transformers and bag of words\
+   * Take a look at transformers and bag of words
+
+
 Next meet up: Thursday Morning (25th)
