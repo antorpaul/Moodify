@@ -12,3 +12,13 @@
     * Here is a Git issue that details my problem: https://github.com/tensorflow/tensorflow/issues/45930
     * https://www.tensorflow.org/install/gpu#install_cuda_with_apt
     * Turns out my issues were just bound to happen because I didn't have an nvidia GPU, but tensorflow seems to use my CPU by default when it detects that. I was just worried because of the nasty error message.
+
+### TO-DOs
+Feb 23, 2021:
+#### Rohit
+   * Baseline algorithm based off features
+#### Yechu
+   * Take a look at the rnn
+#### Antor
+   * Take a look at transformers and bag of words
+Next meet up: Thursday Morning (25th)
