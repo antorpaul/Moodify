@@ -53,7 +53,7 @@ MAX_SEQUENCE_LENGTH = 20
 EMBEDDING_DIM = 50
 
 # Read in song information
-dataFrame = pd.read_csv('data_moodsUPDATED.csv',
+dataFrame = pd.read_csv('data_moodsUPDATED2.csv',
                         header=0, engine='python').dropna()
 
 print("Column names:")
